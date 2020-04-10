@@ -9,9 +9,7 @@ export default class Login extends Component {
         pwd:''
     }
     loginHandler = ()=>{
-        //收集手机号 和密码，然后发送接口登录
-        // const phone = this.refs.phone.state.value;
-        // const pwd = this.refs.pwd.state.value;
+       
         const {phone,pwd} = this.state;
         const params  = {
             password:pwd,
@@ -19,15 +17,13 @@ export default class Login extends Component {
         }
         loginApi(params)
         .then((res)=>{
-            //1.用localStorage保存token
-            //2. 跳转到首页
             const {token,data} = res.data;
             if(token){
                 localStorage.setItem('token',token);
                 localStorage.setItem('phone',data.phone);
                 this.props.history.push('/');
             }else{
-                //....
+               
             }
 
             console.log('res',res)
@@ -62,7 +58,7 @@ export default class Login extends Component {
                         onChange={this.phoneChange}
                             placeholder="请输入手机号"
                         >
-                            {/* <div style={{ backgroundImage: 'url(https://zos.alipayobjects.com/rmsportal/DfkJHaJGgMghpXdqNaKF.png)', backgroundSize: 'cover', height: '22px', width: '22px' }} /> */}
+                          
                             <div><i className="iconfont icon-user" style={{ fontSize: 25, color: '#29C775' }}></i></div>
                         </InputItem>
 
