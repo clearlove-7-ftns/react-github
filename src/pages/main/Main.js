@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TabBar, } from 'antd-mobile';//引用要用的UI组件
+import { TabBar, } from 'antd-mobile';
 import Home from './Home';
 import Wechat from './Wechat'
 import History from './History'
@@ -38,9 +38,9 @@ export default class Main extends Component {
         return (
             <div style={{ position: 'fixed', height: '100%', width: '100%', top: 0 }}>
                 <TabBar
-                    unselectedTintColor="#949494"//未选中的字体颜色
-                    tintColor="#29C775"//选中的字体颜色
-                    barTintColor="white"//tabbar 背景色
+                    unselectedTintColor="#949494"
+                    tintColor="#29C775"
+                    barTintColor="white"
                 >
                     {
                         tabList.map((item) => {
@@ -62,7 +62,7 @@ export default class Main extends Component {
                                     }}
                                     />
                                     }
-                                    selected={this.state.selectedTab === item.id}//当前tab是否被选中
+                                    selected={this.state.selectedTab === item.id}
                                     onPress={() => {
                                         this.setState({
                                             selectedTab: item.id,

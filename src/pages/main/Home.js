@@ -11,36 +11,33 @@ const data = [
     },
     {
         icon: "icon_2",
-        text: '新房'
+        text: '二手房 '
     },
     {
         icon: "icon_3",
-        text: '新房'
+        text: '租房'
     },
     {
         icon: "icon_3",
-        text: '新房'
+        text: '商铺写字楼'
     },
     {
         icon: "icon_4",
-        text: '新房'
+        text: '买房'
     },
     {
         icon: "icon_5",
-        text: '新房'
+        text: '海外房产'
     },
     {
         icon: "icon_6",
-        text: '新房'
+        text: '小区房价'
     },
     {
         icon: "icon_7",
-        text: '新房'
+        text: '问答'
     },
-    {
-        icon: "icon_2",
-        text: '新房'
-    },
+
 ].map((item) => ({
     icon: require(`../../assets/imgs/${item.icon}.png`),
     text: item.text,
@@ -64,8 +61,7 @@ class Home extends Component {
             var citySearch = new window.AMap.CitySearch()
             citySearch.getLocalCity((status, result) => {
                 if (status === 'complete' && result.info === 'OK') {
-                    // 查询成功，result即为当前所在城市信息
-                    console.log('result', result);
+
                     const city = result.city;
                     this.setState({ city });
                 }
